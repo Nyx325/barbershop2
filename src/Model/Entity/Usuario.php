@@ -38,9 +38,3 @@ class Usuario implements Model
         ];
     }
 }
-
-$user = new Usuario(
-    userName: "rubenor",
-    email: "rsro220228@upemor.edu.mx",
-    password: "1234"
-);
