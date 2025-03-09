@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Repository;
 
 use App\Model\Entity\Model;
 use App\Model\Repository\Connector;
@@ -17,7 +17,7 @@ abstract class Repository
         $this->table = $table;
     }
 
-    public function add(Model $obj)
+    public function add(Model $obj): void
     {
         $conn = $this->connector->getConnection();
         $table = $this->table;
@@ -40,7 +40,7 @@ abstract class Repository
         $obj->setId($conn->lastInsertId());
     }
 
-    public function update($obj): void
+    public function update(Model $obj): void
     {
         $conn = $this->connector->getConnection();
 
@@ -66,7 +66,7 @@ abstract class Repository
         $stmt->execute();
     }
 
-    public function get($id)
+    public function get(int $id): ?Model
     {
         $conn = $this->connector->getConnection();
         $stmt = $conn->prepare("SELECT * FROM {$this->table} WHERE id = :id");
@@ -76,7 +76,8 @@ abstract class Repository
         return $data ? $this->instanceObj($data) : null;
     }
 
-    public function delete($id): void
+
+    public function delete(int $id): void
     {
         $conn = $this->connector->getConnection();
         $stmt = $conn->prepare("DELETE FROM {$this->table} WHERE id = :id");
@@ -93,6 +94,9 @@ abstract class Repository
     /**
      * Crear un objeto a partir de la respuesta de una 
      * consulta a la base de datos
+     *
+     * @param $db_response un array asociativo proveniente de la consulta con los
+     * las columnas de la BD y los valores de una fila
      */
     protected abstract function instanceObj(array $db_response): Model;
 }
