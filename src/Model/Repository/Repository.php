@@ -13,7 +13,7 @@ abstract class Repository
 
     public function __construct(string $table)
     {
-        $this->connector = Connector::getInstace();
+        $this->connector = Connector::getInstance();
         $this->table = $table;
     }
 

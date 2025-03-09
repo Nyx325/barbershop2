@@ -6,12 +6,12 @@ use App\Model\Entity\Model;
 
 class Usuario implements Model
 {
-    protected ?int $id;
-    protected string $userName;
-    protected string $email;
-    protected string $password;
+    public ?int $id;
+    public string $userName;
+    public string $email;
+    public string $password;
 
-    public function __construct(?int $id = null, string $userName, string $email, string $password)
+    public function __construct(string $userName, string $email, string $password, ?int $id = null)
     {
         $this->id = $id;
         $this->userName = $userName;

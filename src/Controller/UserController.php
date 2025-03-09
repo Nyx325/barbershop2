@@ -7,13 +7,20 @@ use App\Model\Repository\Repository;
 use App\Model\Repository\UserRepository;
 
 class UserController {
-  private static UserController $instance;
+  private static ?UserController $instance = null;
 
   protected final Repository $repo;
 
   private function __construct()
   {
     $this->repo = UserRepository::getInstance();
+  }
+
+  public static function getInstance(): UserController {
+    if(self::$instance == null){
+      self::$instance = new UserController();
+    }
+    return self::$instance;
   }
 
   public function add(Usuario $data): void {
@@ -32,6 +39,11 @@ class UserController {
     $this->repo->delete($id);
   }
 
+  /**
+   * Retorna un arreglo de objetos Usuario.
+   *
+   * @return Usuario[]
+   */
   public function getAll(): array {
     return $this->repo->getAll();
   }
