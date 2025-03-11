@@ -1,9 +1,9 @@
 <?php
 require __DIR__ . "/vendor/autoload.php";
 
-use App\Controller\UserController;
+use App\Controller\ServicioController;
 
-$ctrl = UserController::getInstance();
+$ctrl = ServicioController::getInstance();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,14 +15,15 @@ $ctrl = UserController::getInstance();
 <body>
     <?php require __DIR__ . "/static/components/header.php" ?>
 
-    <h1>Elementos</h1>
+    <section>
+        <h1></h1>
     <?php
-    $results = $ctrl->getAll();
-    
-    foreach ($results as $result) {
-        echo $result->id . " " . $result->userName . " " . $result->email . "<br>";
+    foreach ($ctrl->getAll() as $servicio) {
+      echo $servicio->description . "<br>";
     }
+
     ?>
+    </section>
 
     <?php require __DIR__ . "/static/components/footer.php" ?>
 </body>

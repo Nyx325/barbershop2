@@ -1,4 +1,5 @@
-CREATE DATABASE IF NOT EXISTS barbershop;
+DROP DATABASE IF EXISTS barbershop;
+CREATE DATABASE barbershop;
 USE barbershop;
 
 CREATE TABLE IF NOT EXISTS usuarios(
@@ -6,4 +7,19 @@ CREATE TABLE IF NOT EXISTS usuarios(
   user_name VARCHAR(20) NOT NULL UNIQUE,
   email VARCHAR(50) NOT NULL UNIQUE,
   password VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS servicios(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  descripcion VARCHAR(20) NOT NULL,
+  precio DECIMAL(6,2) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS citas(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  fecha DATETIME NOT NULL,
+  servicio INT,
+  usuario INT,
+  FOREIGN KEY(servicio) REFERENCES servicios(id),
+  foreign Key (usuario) REFERENCES usuarios(id)
 );
