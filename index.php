@@ -1,9 +1,9 @@
 <?php
 require __DIR__ . "/vendor/autoload.php";
 
-use App\Controller\ServicioController;
+use App\Controller\CitasController;
 
-$ctrl = ServicioController::getInstance();
+$ctrl = CitasController::getInstance();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,18 +13,31 @@ $ctrl = ServicioController::getInstance();
     <title>Document</title>
 </head>
 <body>
-    <?php require __DIR__ . "/static/components/header.php" ?>
+  <?php require __DIR__ . "/static/components/header.php" ?>
 
-    <section>
-        <h1></h1>
-    <?php
-    foreach ($ctrl->getAll() as $servicio) {
-      echo $servicio->description . "<br>";
-    }
+  <!---
+  -------------------------------------
+  |            |                      |
+  |            |                      |
+  |   img      |        section       |
+  |            |                      |
+  |            |                      |
+  -------------------------------------
+  --->
+  <div>
+  <div>
+  <section>
+    <p>
+      Bienvenido a la Barbershop, el lugar donde el estilo y la precisión se
+      encuentran para brindarte una experiencia única de cuidado personal.
+      Nuestro equipo de barberos expertos combina técnicas tradicionales con
+      las últimas tendencias para ofrecerte cortes, afeitados y arreglos de
+      barba impecables. Relájate en un ambiente moderno y acogedor mientras
+      te ayudamos a lucir tu mejor versión. ¡Reserva tu cita hoy y déjanos
+      redefinir tu estilo!
+    </p>
+  </section>
 
-    ?>
-    </section>
-
-    <?php require __DIR__ . "/static/components/footer.php" ?>
+  <?php require __DIR__ . "/static/components/footer.php" ?>
 </body>
 </html>
