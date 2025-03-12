@@ -1,17 +1,10 @@
-<?php
-require __DIR__ . "/vendor/autoload.php";
-
-use App\Controller\CitasController;
-
-$ctrl = CitasController::getInstance();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/side_img.css">
-    <title>Document</title>
+    <title>Barbershop</title>
 </head>
 <body>
   <?php require __DIR__ . "/static/components/header.php" ?>

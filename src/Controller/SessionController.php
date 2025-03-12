@@ -43,4 +43,12 @@ class SessionController {
 
     return $_SESSION["user"];
   }
+
+  public function logOut(): void {
+    if (session_status() == PHP_SESSION_NONE){
+      return;
+    }
+
+    session_destroy();
+  }
 }

@@ -5,9 +5,9 @@
     
     <nav class="nav__bar bg-nav">
         <ol class="nav__bar-list">
-            <li class="nav__bar-item bg-hover"><a href="#">Servicios</a></li>
-            <li class="nav__bar-item bg-hover"><a href="#">Solicitar cita</a></li>
-            <li class="nav__bar-item bg-hover"><a href="#">Acerca de nosotros</a></li>
+            <li class="nav__bar-item bg-hover"><a href="../../src/View/servicios.php">Servicios</a></li>
+            <li class="nav__bar-item bg-hover"><a href="../../src/View/solicitar_cita.php">Solicitar cita</a></li>
+            <li class="nav__bar-item bg-hover"><a href="../../src/View/acerca_de.php">Acerca de nosotros</a></li>
         </ol>
     </nav>
 </header>
