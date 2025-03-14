@@ -51,4 +51,8 @@ class SessionController {
 
     session_destroy();
   }
+
+  public function isLogged(): bool {
+    return session_status() == PHP_SESSION_ACTIVE;
+  }
 }

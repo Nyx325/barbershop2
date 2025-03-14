@@ -2,7 +2,7 @@
 namespace App\Model\Entity;
 
 class Servicio implements Model {
-    public int $id;
+    public ?int $id;
     public string $description;
     public float $precio;
 

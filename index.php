@@ -1,3 +1,6 @@
+<?php
+require __DIR__ . "/vendor/autoload.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,7 @@
 </head>
 <body>
   <?php require __DIR__ . "/static/components/header.php" ?>
+
   <div class="middle-container">
     <div class="img-background"></div>
     <section>
